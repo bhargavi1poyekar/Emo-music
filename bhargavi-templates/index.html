@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <head>
+        <title>Music Player</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+        <!-- <link rel="stylesheet" href="{% static '/css/style.css' %}">
+        <link rel="stylesheet" href="{% static '/css/pack-style.css' %}"> -->
+        <link rel="stylesheet" href="assets/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+        <style>
+            body{
+                background-image: url('assets/Image/home-bg.jpg');
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fa fa-music"></i></a></li>
+                    <li><a href="songs.html">MySongs</a></li>
+                    <li><a href="#">MyPlaylists</a></li>
+                    <li><a href="#">Username</a></li>
+                    <li><a href="#" style="margin-left:900% ;float:right">LogOut</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+        <div class="container" >
+            <div class="emo-card">
+                <h4 class="h"></h4>
+                <button type="button" class="btn btn-emo" style="margin-top: 20%;">Emotion Based Playlist</button>
+            </div>
+        </div>
+        <script>
+            var options = {
+                    strings: ["After silence,","that which comes nearest to expressing the inexpressible...", "is MUSIC !!!","After silence, that which comes nearest to expressing the inexpressible...is MUSIC !!!"],
+                    typeSpeed: 80
+                };
+                var typed = new Typed('.h', options);
+        </script>
+    </body>
+</html>
+  
