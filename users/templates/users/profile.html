@@ -18,7 +18,7 @@
         <h4 style="margin-top: 50%;">{{user.get_full_name}}</h4>
         <p>{{user.get_username}}</p>
         <div class="edit">
-            <a href="/users/user-delete" class="button" style="color:white;border-color: white;">Delete my account</a>
+            <a href="{% url 'user-delete' %}" class="button" style="color:white;border-color: white;">Delete my account</a>
         </div>
     </div>
     <div class="right">
@@ -49,7 +49,7 @@
       
         
         <div class="edit">
-            <a href="/users/edit-profile" class="button">Edit Profile</a>
+            <a href="{% url 'edit-profile' %}" class="button">Edit Profile</a>
         </div>
         
     </div>

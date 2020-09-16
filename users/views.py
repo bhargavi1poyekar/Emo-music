@@ -42,7 +42,7 @@ def editProfile(request):
             profile.phone_number=request.POST['phone_number']
             profile.bio=request.POST['bio']
             profile.save()
-            return redirect('/users/profile')
+            return redirect('user-profile')
         else:
             return render(request,'users/edit-profile.html')
 

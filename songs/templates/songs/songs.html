@@ -1,0 +1,86 @@
+{% extends 'users/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="col-12 col-md-12 ">
+        <div class="card ">
+            <div class="card-content ">
+                <div class="card-body pt-2">
+                    <div class="row">
+                        <div class="col-md-11 col-12 pt-2 text-center">
+                            Songs
+                        </div>
+                        <div class="col-md-1 col-12 pt-2">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    {% if songs %}
+    {% for song in songs %}
+    <div class="col-12 col-md-12 mt-3">
+        <div class="card pull-up">
+            <div class="card-content ">
+                <div class="card-body pt-2">
+                    <div class="row">
+                        <div class="col-md-10 col-12 pt-2 ">
+                            {{song.song_name}}
+                        </div>
+                        <div class="col-md-1 col-12 pt-2">
+                            <a href=""><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-md-1 col-12 pt-2">
+                            <a href="{% url 'del-song' song.id %}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    {% endfor %}
+    {% else %}
+    <h4 style="color:white;margin-top:10px;text-align:center;">No Songs uploaded</h4>
+    {% endif %}
+</div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add Songs</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="{% url 'add-song' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <select name="emotion" class="form-control">
+                    <option value="sad">Sad</option>
+                    <option value="happy">Happy</option>
+                    <option value="normal">Normal</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="file" name="song" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Save changes</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+        
+    
