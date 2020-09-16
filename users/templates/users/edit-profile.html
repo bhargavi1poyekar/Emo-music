@@ -1,0 +1,55 @@
+{% extends 'users/main.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static '/css/editprofile.css' %}">
+    <style>
+        .wrapper-pro .left h4{
+            font-size:25px;
+        }
+
+        .wrapper-pro .left p{
+            font-size:15px;
+        }
+    </style>
+</head>
+<div class="wrapper-pro">
+    <div class="left" style="font-size:20px;">
+        <h4 style="margin-top: 50%;">{{user.get_full_name}}</h4>
+        <p>{{user.get_username}}</p>
+        <p>{{ user.email }}</p>
+    </div>
+    <div class="right">
+        <form method="POST">
+            {% csrf_token %}
+        <div class="info">
+            <h3>Edit Profile</h3>
+            <div class="info_data">
+                <div class="data">
+                   <h4>Contact No.</h4>
+                   <input type="text" class="field" placeholder="Contact No." value={{user.profile.phone_number}} name="phone_number">
+                </div>
+                <h4>BIO</h4>
+                <div class="Bio_data">
+                    <div class="data">
+                        <textarea class="field" name="bio">{{user.profile.bio}}</textarea>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+      
+        
+        <div class="edit" >
+           <button type="submit" class="button">Save Changes</button>
+        </div>
+    </form>
+    </div>
+</div>
+
+
+    
+{% endblock %}
+        
+    

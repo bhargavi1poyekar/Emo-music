@@ -43,14 +43,8 @@ INSTALLED_APPS = [
     'users',
     'songs',
     'social_django',
-    #all auth
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-
-    #providers
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
+   
+    
 
 ]
 

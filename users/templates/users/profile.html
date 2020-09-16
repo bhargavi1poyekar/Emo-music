@@ -1,0 +1,63 @@
+{% extends 'users/main.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <style>
+        .wrapper-pro .left h4{
+            font-size:25px;
+        }
+
+        .wrapper-pro .left p{
+            font-size:20px;
+        }
+    </style>
+</head>
+<div class="wrapper-pro">
+    <div class="left" style="font-size:20px;">
+        <h4 style="margin-top: 50%;">{{user.get_full_name}}</h4>
+        <p>{{user.get_username}}</p>
+        <div class="edit">
+            <a href="/users/user-delete" class="button" style="color:white;border-color: white;">Delete my account</a>
+        </div>
+    </div>
+    <div class="right">
+        <div class="info">
+            <h3>Profile</h3>
+            <div class="info_data">
+                <div class="data">
+                    <h4>Email</h4>
+                    <p>{{ user.email }}</p>
+                </div>
+                
+                <div class="data">
+                   <h4>Contact No.</h4>
+                    <p>{{user.profile.phone_number}}</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="Bio">
+            <h3>BIO</h3>
+            <div class="Bio_data">
+                 <div class="data">
+                    <p>{{user.profile.bio}}</p>
+                 </div>
+                 
+            </div>
+        </div>
+      
+        
+        <div class="edit">
+            <a href="/users/edit-profile" class="button">Edit Profile</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+    
+{% endblock %}
+        
+    
