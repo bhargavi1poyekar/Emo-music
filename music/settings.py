@@ -37,7 +37,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'emotion'
+    'django.contrib.sites',
+    
+    'emotion',
+    'users',
+    'songs',
+    'social_django',
+    #all auth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    #providers
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+
 ]
 
 MIDDLEWARE = [
@@ -48,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'music.urls'
@@ -63,6 +78,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  
+                'social_django.context_processors.login_redirect', 
+                
             ],
         },
     },
@@ -81,6 +99,14 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = (
+        'social_core.backends.facebook.FacebookOAuth2',
+        # 'social_core.backends.twitter.TwitterOAuth',
+        # 'social_core.backends.github.GithubOAuth2',
+
+        'django.contrib.auth.backends.ModelBackend',
+
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -123,3 +149,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static')
 ]
+
+LOGIN_REDIRECT_URL='users-home'
+LOGIN_URL='login'
+
+SITE_ID=1
+
+SOCIAL_AUTH_FACEBOOK_KEY = '349675816401216'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '92bd7ef70dccabf946e6d0d0b9a757f0'

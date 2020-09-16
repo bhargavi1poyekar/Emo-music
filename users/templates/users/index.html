@@ -1,0 +1,20 @@
+{% extends 'users/main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container" >
+        <div class="emo-card">
+            <h4 class="h"></h4>
+            <button type="button" class="btn btn-emo" style="margin-top: 20%;">Emotion Based Playlist</button>
+        </div>
+    </div>
+    <script>
+        var options = {
+                strings: ["After silence,","that which comes nearest to expressing the inexpressible...", "is MUSIC !!!","After silence, that which comes nearest to expressing the inexpressible...is MUSIC !!!"],
+                typeSpeed: 80
+            };
+            var typed = new Typed('.h', options);
+    </script>
+{% endblock %}
+        
+    

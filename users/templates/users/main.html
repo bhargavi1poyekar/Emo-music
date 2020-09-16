@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+    <head>
+        <title>Music Player</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static '/css/style.css' %}">
+        
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+        <style>
+            body{
+                background-image: url("{% static 'images/home-bg2.jpg' %}");
+                background-position: center;
+                background-size: 100% 100% ;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="wrapper">
+            {% include 'users/navbar.html' %}
+        </div>
+        {% block content %}
+
+        {% endblock %}
+    </body>
+</html>
+  

@@ -22,6 +22,7 @@ urlpatterns = [
     path('',emotion_views.emotion,name="emotion"),
     path('users/',include('users.urls')),
     path('songs/',include('songs.urls')),
+    
 
 
 ]
