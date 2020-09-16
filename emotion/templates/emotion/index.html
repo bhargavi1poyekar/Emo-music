@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+</head>
+<body>
+    
+    <img src="{% static 'images/surprise.webp' %}" id="bg" width=800px height=640px>
+    <div>
+        <h1>{{ emotion }}</h1>
+    </div>
+
+</body>
+</html>
