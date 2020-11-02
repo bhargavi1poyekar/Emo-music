@@ -33,7 +33,7 @@
                             {{song.song_name}}
                         </div>
                         <div class="col-md-1 col-12 pt-2">
-                            <a href=""><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                            <a href="{% url 'play-songs' song.id %}"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
                         </div>
                         <div class="col-md-1 col-12 pt-2">
                             <a href="{% url 'del-song' song.id %}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>

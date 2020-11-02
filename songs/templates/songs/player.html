@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static '/css/player-style.css' %}">
+</head>
+<body>
+  {% include 'users/navbar.html' %}
+  <div class="container">
+    <div class="glow">
+      <div class="text-container">
+        <span class="text"></span>
+        <br>
+        <div class="playback_controls">
+          <button onclick="prevTrack()"><i class="fa fa-step-backward "></i></button>
+          <button class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-pause-circle "></i></button>
+          <button onclick="nextTrack()"><i class="fa fa-step-forward"></i></button>
+        </div>
+        <br>
+        <div id="seekbar">
+          <div class="current-time" style="color: white;">00:00</div>
+          <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+          <div class="total-duration" style="color: white;">00:00</div>
+        </div>
+        <br>
+        <div class="volume_controls">
+        <button id="mute" onclick="mute()"><i class="fa fa-volume-up"></i></button>
+        <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()"> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="" action="index.html" method="post" display="none"> 
+    <input id="curr_song" type="hidden" value="{{curr_song}}">
+    {% if songs %}
+    {% for song in songs %}
+    <input type="hidden" name="songsname[]" value="{{song.song_name}}" /><br>
+    <input type="hidden" name="songsurl[]" value="{{song.song_url}}" /><br>
+    {% endfor %}
+    {% endif %} 
+  </form> 
+
+  <script >
+    let now_playing = document.querySelector(".now-playing");
+    
+    let track_name = document.querySelector(".text");
+    
+    let playpause_btn = document.querySelector(".playpause-track");
+    let next_btn = document.querySelector(".next-track");
+    let prev_btn = document.querySelector(".prev-track");
+
+    let seek_slider = document.querySelector(".seek_slider");
+    let volume_slider = document.querySelector(".volume_slider");
+    let curr_time = document.querySelector(".current-time");
+    let total_duration = document.querySelector(".total-duration");
+
+    
+    let isPlaying = true;
+    let updateTimer;
+
+    // Create new audio element
+    let curr_track = document.createElement('audio');
+
+    // Define the tracks that have to be played
+
+    var input = document.getElementsByName('songsname[]');
+    var curr_song=document.getElementById('curr_song').value;
+    
+    var track_index=0;
+    var track_list=[]; 
+    for (var i = 0; i < input.length; i++) 
+    { 
+        track_list[i] = input[i].value;
+        if(input[i].value==curr_song)
+        {
+          track_index=i;
+        } 
+    } 
+
+    var url = document.getElementsByName('songsurl[]');
+    
+    var track_url=[]; 
+    for (var i = 0; i < url.length; i++) 
+    { 
+      track_url[i] = url[i].value; 
+    }  
+
+    function loadTrack(track_index) {
+      clearInterval(updateTimer);
+      resetValues();
+      curr_track.src = track_url[track_index];
+      curr_track.load();
+      curr_track.play();
+      track_name.textContent = track_list[track_index];
+      
+      updateTimer = setInterval(seekUpdate, 1000);
+      curr_track.addEventListener("ended", nextTrack);
+      
+    }
+
+    function resetValues() {
+      curr_time.textContent = "00:00";
+      total_duration.textContent = "00:00";
+      seek_slider.value = 0;
+    }
+
+    // Load the first track in the tracklist
+    loadTrack(track_index);
+
+    function playpauseTrack() {
+      if (!isPlaying) playTrack();
+      else pauseTrack();
+    }
+
+    function playTrack() {
+      curr_track.play();
+      isPlaying = true;
+      playpause_btn.innerHTML = '<i class="fa fa-pause-circle "></i>';
+    }
+
+    function pauseTrack() {
+      curr_track.pause();
+      isPlaying = false;
+      playpause_btn.innerHTML = '<i class="fa fa-play-circle "></i>';;
+    }
+
+    function nextTrack() {
+      if (track_index < track_list.length - 1)
+        track_index += 1;
+      else track_index = 0;
+      loadTrack(track_index);
+      playTrack();
+    }
+
+    function prevTrack() {
+      if (track_index > 0)
+        track_index -= 1;
+      else track_index = track_list.length-1;
+      loadTrack(track_index);
+      playTrack();
+    }
+
+    function seekTo() {
+      seekto = curr_track.duration * (seek_slider.value / 100);
+      curr_track.currentTime = seekto;
+    }
+
+    function setVolume() {
+      curr_track.volume = volume_slider.value / 100;
+    }
+
+    function mute() {
+      if (muted) {
+        song.volume = vol;
+        muted = false;
+        document.getElementById('mute').innerHTML = '<i class="fa fa-volume-up"></i>';
+      } else {
+        song.volume = 0;
+        muted = true;
+        document.getElementById('mute').innerHTML = '<i class="fa fa-volume-off"></i>';
+      }
+    }
+
+    function seekUpdate() {
+      let seekPosition = 0;
+
+      if (!isNaN(curr_track.duration)) {
+        seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+
+        seek_slider.value = seekPosition;
+
+        let currentMinutes = Math.floor(curr_track.currentTime / 60);
+        let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+        let durationMinutes = Math.floor(curr_track.duration / 60);
+        let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+
+        if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+        if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+        if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+        if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+
+        curr_time.textContent = currentMinutes + ":" + currentSeconds;
+        total_duration.textContent = durationMinutes + ":" + durationSeconds;
+      }
+    }
+
+  </script>
+</body>
+</html>

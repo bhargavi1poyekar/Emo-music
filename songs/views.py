@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
-
-# Create your views here.
 from django.shortcuts import render,redirect,HttpResponse
 from django.views import View
 from users.models import *
@@ -12,9 +10,17 @@ def songs(request):
     songs=Song.objects.filter(user=request.user)
     count=songs.count()
     if count==0:
-        songs=None
-    
+        songs=None 
     return render(request,'songs/songs.html',{'songs':songs})
+
+def playSong(request,id):
+    song=Song.objects.get(id=id)
+    song=song.song_name
+    songs=Song.objects.filter(user=request.user)
+    count=songs.count()
+    if count==0:
+        songs=None
+    return render(request,'songs/player.html', {'songs':songs,'curr_song':song})
 
 def addSong(request):
     if request.method=="POST":
@@ -32,3 +38,11 @@ def removeSong(request,id):
     song=Song.objects.get(id=id)
     song.delete()
     return redirect('users-songs')
+
+def getSongName(request,id):
+    song=Song.objects.get(id=id)
+    return song.song_name
+
+def getUrl(request,id):
+    song=Song.objects.get(id=id)
+    return song.song_url
