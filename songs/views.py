@@ -4,6 +4,7 @@ from django.shortcuts import render,redirect,HttpResponse
 from django.views import View
 from users.models import *
 from songs.models import *
+from playlists.models import *
 from django.contrib.auth.models import User
 
 def songs(request):
@@ -11,7 +12,11 @@ def songs(request):
     count=songs.count()
     if count==0:
         songs=None 
-    return render(request,'songs/songs.html',{'songs':songs})
+    playlists=Playlist.objects.filter(user=request.user)
+    count=playlists.count()
+    if count==0:
+        playlists=None
+    return render(request,'songs/songs.html',{'songs':songs,'playlists':playlists})
 
 def playSong(request,id):
     song=Song.objects.get(id=id)

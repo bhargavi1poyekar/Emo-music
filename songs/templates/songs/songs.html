@@ -12,7 +12,7 @@
                             Songs
                         </div>
                         <div class="col-md-1 col-12 pt-2">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSong">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                             </button>
                         </div>
@@ -29,8 +29,13 @@
             <div class="card-content ">
                 <div class="card-body pt-2">
                     <div class="row">
-                        <div class="col-md-10 col-12 pt-2 ">
+                        <div class="col-md-9 col-12 pt-2 ">
                             {{song.song_name}}
+                        </div>
+                        <div class="col-md-1 col-12 pt-2">
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addToPlaylist{{song.id}}">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
                         </div>
                         <div class="col-md-1 col-12 pt-2">
                             <a href="{% url 'play-songs' song.id %}"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
@@ -43,13 +48,48 @@
             </div>
         </div>
     </div> 
+
+    <div class="modal fade" id="addToPlaylist{{song.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Add Song To Playlist</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form method="POST" action="{% url 'add-song-playlist' %}" >
+                {% csrf_token %}
+                <input type="hidden" value={{song.id}} name="song">
+                <div class="form-group">
+                    <select name="playlist" class="form-control">
+                        {% if playlists %}
+                        {% for play in playlists %}
+                        <option value={{play.id}}>{{play.playlist_name}}</option>
+                        {% endfor %}
+                        {% else %}
+                        <option value=None>No Playlist Created</option>
+                        {% endif %}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Add</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
     {% endfor %}
     {% else %}
     <h4 style="color:white;margin-top:10px;text-align:center;">No Songs uploaded</h4>
     {% endif %}
 </div>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="addSong" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -81,6 +121,8 @@
       </div>
     </div>
   </div>
+
+  
 {% endblock %}
         
     

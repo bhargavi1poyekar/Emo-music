@@ -80,6 +80,26 @@ def playSongofPlaylist(request,id):
         songs=None
     return render(request,'songs/player.html', {'songs':songs,'curr_song':song})
 
+def addSong(request):
+    if request.method=='POST':
+        playlist_id=request.POST.get('playlist')
+        playlist=Playlist.objects.get(id=playlist_id)
+        song_id=request.POST.get('song')
+        song=Song.objects.get(id=song_id)
+        play_song=Playlist_songs(playlist=playlist,song=song)
+        play_song.save()
+        playlist.number_of_songs+=1
+        playlist.save()
+        return redirect('users-playlists')
+
+def getNumberOfSongs(request,id):
+    playlist=Playlist.objects.get(id=id)
+    no=playlist.number_of_songs
+    return no
+
+
+
+
 
 
     
