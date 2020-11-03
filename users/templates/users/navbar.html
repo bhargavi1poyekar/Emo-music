@@ -2,8 +2,7 @@
     <ul>
         <li><a href="{% url 'users-home' %}"><i class="fa fa-music"></i></a></li>
         <li><a href="{% url 'users-songs' %}">MySongs</a></li>
-        <li><a href="#">MyPlaylists</a></li>
-        
+        <li><a href="{% url 'users-playlists' %}">MyPlaylists</a></li>
         <li><a href="{% url 'user-profile' %}" style="font-variant: normal;">{{user.username}}</a></li>
         <li><a href="{% url 'logout' %}" style="margin-left:900% ;float:right">LogOut</a></li>
     </ul>

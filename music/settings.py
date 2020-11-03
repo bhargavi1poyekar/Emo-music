@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'emotion',
     'users',
     'songs',
+    'playlists',
     
 
 ]

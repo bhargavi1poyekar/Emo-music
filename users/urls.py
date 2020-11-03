@@ -12,4 +12,5 @@ urlpatterns = [
     path('edit-profile/',users_view.editProfile,name='edit-profile'),
     path('user-delete/',users_view.deleteUser,name='user-delete'),
     path('songs/',include('songs.urls')),
+    path('playlists/',include('playlists.urls')),
 ]
