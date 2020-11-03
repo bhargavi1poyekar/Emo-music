@@ -8,14 +8,10 @@
             <div class="card-content ">
                 <div class="card-body pt-2">
                     <div class="row">
-                        <div class="col-md-11 col-12 pt-2 text-center">
+                        <div class="col-md-12 col-12 pt-2 text-center heading">
                             {{playlist.playlist_name}}
                         </div>
-                        <div class="col-md-1 col-12 pt-2">
-                            <a href="{% url 'create-playlist' %}" class="btn btn-primary">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -28,7 +24,7 @@
             <div class="card-content ">
                 <div class="card-body p-3">
                     <div class="row">
-                        <div class="col-md-10 col-12 pt-2">
+                        <div class="col-md-10 col-12 pt-2 list">
                             {{play.song.song_name}}
                         </div>
                         <div class="col-md-1 col-12 pt-2">

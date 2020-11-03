@@ -16,7 +16,7 @@
 }
 .tabbed>label:hover,
 .tabbed>input:checked+label{
-    background-color:#220c5e;
+    background-color:#0b627c;
     color:white;
 
 }
@@ -140,7 +140,7 @@
     border:none;
     outline:none;
     cursor:pointer;
-    background-color: #220c5e;
+    background-color: #0a4c55;
 }
 
 input:focus {

@@ -14,12 +14,35 @@
         <link rel="stylesheet" href="{% static '/css/style.css' %}">
         <link rel="stylesheet" href="{% static '/css/prostyles.css' %}">
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Marmelad&family=Rancho&display=swap" rel="stylesheet">
         <style>
             body{
-                background-image: url("{% static 'images/home-bg2.jpg' %}");
+                background-image:url('{% static "images/login-back2.jpg" %}');
+                background-size:cover;
                 background-position: center;
-                background-size: 100% 100% ;
+                background-attachment: fixed;
             }
+            .heading{
+                font-family: 'Philosopher', sans-serif;
+                font-size:30px;
+            }
+            .h{
+                font-family: 'Rancho', cursive;
+                font-size:60px;
+            }
+            .list{
+                font-family: 'Marmelad', sans-serif;
+                font-size:20px;
+            }
+            .fa{
+                font-size:20px;
+                text-align: center;
+            }
+            .btn{
+                text-align: center;
+            }
+           
         </style>
 
     </head>

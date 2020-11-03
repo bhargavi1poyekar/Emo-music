@@ -7,23 +7,23 @@
         <form method="POST">
             {% csrf_token %}
             <div class="form-group">
-              <label for="exampleFormControlInput1" style="color:white;font-size:20px;font-weight: bold;font-variant: small-caps;">Name Of Playlist</label>
+              <label for="exampleFormControlInput1" style="color:white;font-size:25px;font-weight: bold;font-variant: small-caps;">Name Of Playlist</label>
               <input type="text" class="form-control" name="play_name" id="exampleFormControlInput1" placeholder="Playlist Name">
             </div>
        
     </div> 
     {% if songs %}
     <div class="container">
-        <h5 style="color:white;">Select Songs</h5>
+        <h5 style="color:white;font-size:25px;font-weight: bold;font-variant: small-caps;">Select Songs</h5>
     </div>
     {% for song in songs %}
     <div class="col-12 col-md-12 mt-3">
         <div class="card ">
             <div class="card-content ">
-                <div class="card-body pt-2">
+                <div class="card-body p-2">
                     <div class="row">
-                        <div class="col-md-10 col-12 pt-2 ">
-                            <label><input type="checkbox" name="songs[]" value="{{song.id}}"> {{song.song_name}}</label>
+                        <div class="col-md-10 col-12 pt-2 list">
+                            <label><input type="checkbox" name="songs[]" value="{{song.id}}">  {{song.song_name}}</label>
                         </div>
                     </div>
                 </div>

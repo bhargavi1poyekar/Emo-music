@@ -21,8 +21,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',emotion_views.emotion,name="emotion"),
-    path('users/',include('users.urls')),
+    path('emotion/',emotion_views.emotion,name="emotion"),
+    path('',include('users.urls')),
 ]
 
 if settings.DEBUG:
