@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,redirect,HttpResponse
 from . import emotion_model 
 from Image.models import Image
 from pathlib import Path
@@ -18,6 +18,17 @@ def emotion(request):
 
     fer = emotion_model.FacialExpressionModel(JSON_PATH,WEIGHTS_PATH,IMG_PATH)
     return_val,processed_img = fer.preprocessImg()
+    image.delete()
+
+    if return_val==0:
+        error="No Face detected for given image ,Try again with new img :("
+        return redirect("error-page",error)
+    elif return_val==2:
+        error="No Face detected for given image ,Try again with new img :("
+        return redirect("error-page",error)
+    elif return_val==1:
+        error="An Error Ocurred, Please Try Again :("
+        return redirect("error-page",error)
 
     emotion = ""
     if return_val:
@@ -27,9 +38,9 @@ def emotion(request):
             print(f'\n\n\nEMOTION IS {emotion}\n\n\n')
 
             ## After succesful removal of emotion delete the image
-            image.delete()
+            
     else:
         print("PreProcess me error")
-
+    
     context = {'emotion':emotion,'image':image_url}
     return render(request,'emotion/index.html',context)
