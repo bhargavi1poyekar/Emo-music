@@ -93,6 +93,7 @@
       clearInterval(updateTimer);
       resetValues();
       curr_track.src = track_url[track_index];
+      console.log (curr_track.src)
       curr_track.load();
       curr_track.play();
       track_name.textContent = track_list[track_index];
