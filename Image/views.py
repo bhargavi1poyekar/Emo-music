@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render,redirect,HttpResponse
 from django.views import View
-from Image.models import *
+from Image.models import Image
 from django.contrib.auth.models import User
 
 # Create your views here.
