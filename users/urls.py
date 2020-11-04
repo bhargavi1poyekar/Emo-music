@@ -13,4 +13,5 @@ urlpatterns = [
     path('user-delete/',users_view.deleteUser,name='user-delete'),
     path('songs/',include('songs.urls')),
     path('playlists/',include('playlists.urls')),
+    path('image/',include('Image.urls')),
 ]
