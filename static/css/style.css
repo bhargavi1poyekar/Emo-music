@@ -123,6 +123,6 @@ nav ul li a:hover:after {
   box-shadow: 2px 2px 5px rgb(22, 5, 51);
 }
 .pull-up:hover {
-  transform: scale(0.5);
+  transform: scale(1.05);
   box-shadow: 2px 2px 100px rgb(22, 5, 51);
 }
