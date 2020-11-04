@@ -14,4 +14,5 @@ urlpatterns = [
     path('songs/',include('songs.urls')),
     path('playlists/',include('playlists.urls')),
     path('image/',include('Image.urls')),
+    path('error/<str:error>',users_view.showError,name='error-page'),
 ]

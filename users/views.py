@@ -46,5 +46,9 @@ def editProfile(request):
         else:
             return render(request,'users/edit-profile.html')
 
+def showError(request,error):
+    return render(request,'users/error-page.html',{'error':error})
+
+
 
 
