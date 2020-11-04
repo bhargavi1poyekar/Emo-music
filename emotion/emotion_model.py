@@ -2,6 +2,7 @@ from tensorflow.keras.models import model_from_json,load_model
 import numpy as np
 import tensorflow as tf
 import cv2
+from django.shortcuts import render,redirect,HttpResponse
 
 class FacialExpressionModel(object):
     EMOTION_LIST = ["Happy" ,"Neutral" ,"Sad"]
@@ -33,10 +34,10 @@ class FacialExpressionModel(object):
             faces = self.face_cascade.detectMultiScale(self.image,1.3,5)
             if len(faces)==0:
                 print(f"No Face detected for given image ,Try again with new img :(")
-                return False,None
+                return 0,None
             elif len(faces)>1:
                 print(f"Multiple Faces detected for given image ,Try again with new img :(")
-                return False,None
+                return 2,None
             else:
                 for (x,y,w,h) in faces:
                     roi_img = self.image[y:y+h, x:x+w]
@@ -46,7 +47,7 @@ class FacialExpressionModel(object):
 
         except Exception as _:
             print("An Error Ocurred, Please Try Again :(")
-            return False,None
+            return 1,None
         else:
             return True,roi_img
 
