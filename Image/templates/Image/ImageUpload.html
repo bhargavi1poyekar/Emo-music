@@ -1,0 +1,14 @@
+{% extends 'users/main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container" >
+        <div class="emo-card">
+            <!-- yaha pe first href me image ke jagah useCamera likh dena  -->
+            <a href="{% url 'image' %}" class="btn btn-emo" style="margin-top: 20%; margin-right: 20px;">Capture Image</a>
+            <a href="{% url 'takeImage' %}" class="btn btn-emo" style="margin-top: 20%;">Upload Image</a>
+        </div>
+    </div>
+{% endblock %}
+        
+    
