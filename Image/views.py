@@ -20,7 +20,10 @@ def takeImage(request):
         return redirect('filterImage')
 
 # def useCamera(request):
-    #Yaha open cv se capture Image vala dal
+#     if request.method=="GET":
+#         return render(request,'Image/CaptureImage.html')
+#     else:
+#         return redirect('filterImage')
 
 def filterImage(request):
     return redirect('emotion')
