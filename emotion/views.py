@@ -17,17 +17,19 @@ def emotion(request):
 
 
     fer = emotion_model.FacialExpressionModel(JSON_PATH,WEIGHTS_PATH,IMG_PATH)
-    return_val,processed_img = fer.preprocessImg()
-    image.delete()
 
+    # Once image is available in FER class delete it from database
+    image.delete()
+    return_val,processed_img = fer.preprocessImg()
+    
     if return_val==0:
         error="No Face detected for given image ,Try again with new img :("
         return redirect("error-page",error)
     elif return_val==2:
-        error="No Face detected for given image ,Try again with new img :("
+        error="Multiple Face detected for given image ,Try again with new img :("
         return redirect("error-page",error)
     elif return_val==1:
-        error="An Error Ocurred, Please Try Again :("
+        error="An Unkwon Error Ocurred, Please Try Again :("
         return redirect("error-page",error)
 
     emotion = ""
@@ -36,8 +38,6 @@ def emotion(request):
         if success:
             emotion += fer.getEmotions()
             print(f'\n\n\nEMOTION IS {emotion}\n\n\n')
-
-            ## After succesful removal of emotion delete the image
             
     else:
         print("PreProcess me error")
