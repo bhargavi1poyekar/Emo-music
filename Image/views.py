@@ -23,10 +23,7 @@ def takeImage(request):
     #Yaha open cv se capture Image vala dal
 
 def filterImage(request):
-    image=Image.objects.get(user=request.user)
-    image_url=image.Image_url
-    # Ye image ka url hai jo store hua hai..par emotion detect hone ke bad ye image delete kar dena
-    return HttpResponse("image_url")
+    return redirect('emotion')
         
 
 
