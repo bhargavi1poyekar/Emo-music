@@ -5,7 +5,6 @@ import cv2
 from django.shortcuts import render,redirect,HttpResponse
 
 class FacialExpressionModel(object):
-    EMOTION_LIST = ["Happy" ,"Neutral" ,"Sad"]
     emotion_output = None
     IMG_SIZE = 256
 
@@ -34,10 +33,10 @@ class FacialExpressionModel(object):
             faces = self.face_cascade.detectMultiScale(self.image,1.3,5)
             if len(faces)==0:
                 print(f"No Face detected for given image ,Try again with new img :(")
-                return 0,None
+                return "noFace",None
             elif len(faces)>1:
                 print(f"Multiple Faces detected for given image ,Try again with new img :(")
-                return 2,None
+                return "mulFace",None
             else:
                 for (x,y,w,h) in faces:
                     roi_img = self.image[y:y+h, x:x+w]
@@ -47,14 +46,14 @@ class FacialExpressionModel(object):
 
         except Exception as _:
             print("An Error Ocurred, Please Try Again :(")
-            return 3,None
+            return "exception",None
         else:
             return True,roi_img
 
         
     def predictEmotion(self,roi_img):
         try:
-            labels =  ["happy","neutral","sad"]
+            labels =  ["happy","normal","sad"]
             prediction = self.model.predict(roi_img.reshape(1,self.IMG_SIZE,self.IMG_SIZE,3))
             
             self.emotion_output = labels[np.argmax(prediction)]
