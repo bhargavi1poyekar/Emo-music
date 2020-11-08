@@ -48,24 +48,42 @@ def emotion(request):
     
     #context = {'emotion':emotion,'image':image_url}
     #####
+
+
     user_songs=Song.objects.filter(user=request.user).filter(emotion=emotion)
     admin =User.objects.filter(username='admin')[0]
     admin_songs=Song.objects.filter(user=admin).filter(emotion=emotion)
-    playlist=Playlist(user=admin,playlist_name=emotion,
+    
+    ply=Playlist.objects.filter(user=admin).filter(playlist_name=request.user.username+'_'+emotion)
+    print(ply)
+    if ply :
+        ply.delete()
+
+    playlist=Playlist(user=admin,playlist_name=request.user.username+'_'+emotion,
                 number_of_songs=-1)
     playlist.save()
+
     for song in user_songs:
         relation=Playlist_songs(playlist=playlist,song=song)
         relation.save()
     sz=admin_songs.count()
-    
-    sampling = set(random.choices(list(range(0,sz)), k=min(10,sz)))
+    # print(sz)
+
+    sampling = set(random.sample(list(range(0,sz)), k=min(10,sz)))
     i=0 
-    for song in admin_songs:
-        if i in sampling:
-            relation=Playlist_songs(playlist=playlist,song=song)
+    order=[*range(sz)]
+    random.shuffle(order)
+    # print(user_songs)
+    # print(admin_songs)
+    # print(order,sampling)
+
+    while i <sz :
+        if order[i] in sampling:
+            print(i,order[i],admin_songs[order[i]])
+            relation=Playlist_songs(playlist=playlist,song=admin_songs[order[i]])
             relation.save()
         i+=1
+
     return redirect('displayPlaylist',playlist.id)
     ####
     
