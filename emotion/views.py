@@ -28,7 +28,7 @@ def emotion(request):
     elif return_val==2:
         error="Multiple Face detected for given image ,Try again with new img :("
         return redirect("error-page",error)
-    elif return_val==1:
+    elif return_val==3:
         error="An Unkwon Error Ocurred, Please Try Again :("
         return redirect("error-page",error)
 

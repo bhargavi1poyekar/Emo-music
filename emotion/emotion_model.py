@@ -47,7 +47,7 @@ class FacialExpressionModel(object):
 
         except Exception as _:
             print("An Error Ocurred, Please Try Again :(")
-            return 1,None
+            return 3,None
         else:
             return True,roi_img
 
