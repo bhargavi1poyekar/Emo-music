@@ -12,4 +12,5 @@ media
 !.vscode/extensions.json 
 .history
 venv/
+emotion/model_wts.h5
 

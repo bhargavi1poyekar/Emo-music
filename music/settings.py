@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -139,18 +138,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-MEDIA_URL='/media/'
+MEDIA_URL = '/media/'
 
-LOGIN_REDIRECT_URL='users-home'
-LOGIN_URL='login'
+LOGIN_REDIRECT_URL = 'users-home'
+LOGIN_URL = 'login'
 
-SITE_ID=1
+SITE_ID = 1
 
 SOCIAL_AUTH_FACEBOOK_KEY = '349675816401216'  # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = '92bd7ef70dccabf946e6d0d0b9a757f0'

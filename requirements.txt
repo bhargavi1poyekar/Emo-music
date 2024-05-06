@@ -1,123 +1,63 @@
-# This file may be used to create an environment using:
-# $ conda create --name <env> --file <this file>
-# platform: win-64
-@EXPLICIT
-https://repo.anaconda.com/pkgs/main/win-64/_tflow_select-2.3.0-mkl.conda
-https://repo.anaconda.com/pkgs/main/win-64/blas-1.0-mkl.conda
-https://conda.anaconda.org/conda-forge/win-64/ca-certificates-2024.2.2-h56e8100_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/icc_rt-2022.1.0-h6049295_2.conda
-https://repo.anaconda.com/pkgs/main/noarch/pybind11-abi-5-hd3eb1b0_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/tzdata-2024a-h04d1e81_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/vs2015_runtime-14.27.29016-h5e58377_2.conda
-https://repo.anaconda.com/pkgs/main/win-64/vc-14.2-h21ff451_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/bzip2-1.0.8-h2bbff1b_6.conda
-https://repo.anaconda.com/pkgs/main/win-64/eigen-3.4.0-h59b6b97_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/ffmpeg-4.2.2-he774522_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/flatbuffers-2.0.0-h6c2663c_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/giflib-5.2.1-h8cc25b3_3.conda
-https://repo.anaconda.com/pkgs/main/win-64/icu-58.2-ha925a31_3.conda
-https://repo.anaconda.com/pkgs/main/win-64/intel-openmp-2023.1.0-h59b6b97_46320.conda
-https://repo.anaconda.com/pkgs/main/win-64/jpeg-9e-h2bbff1b_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/krb5-1.19.4-h5b6d351_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/lerc-3.0-hd77b12b_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/libdeflate-1.17-h2bbff1b_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/libffi-3.4.4-hd77b12b_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/libiconv-1.16-h2bbff1b_3.conda
-https://repo.anaconda.com/pkgs/main/win-64/libogg-1.3.5-h2bbff1b_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/libwebp-base-1.3.2-h2bbff1b_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/lz4-c-1.9.4-h2bbff1b_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/openssl-1.1.1w-h2bbff1b_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/snappy-1.1.10-h6c2663c_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/sqlite-3.45.3-h2bbff1b_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/tbb-2021.8.0-h59b6b97_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/tk-8.6.12-h2bbff1b_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/xz-5.4.6-h8cc25b3_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/zlib-1.2.13-h8cc25b3_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/hdf5-1.12.1-h51c971a_3.conda
-https://repo.anaconda.com/pkgs/main/win-64/libclang13-14.0.6-default_h8e68704_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/libpng-1.6.39-h8cc25b3_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/libprotobuf-3.20.3-h23ce68f_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/libssh2-1.10.0-hcd4344a_2.conda
-https://repo.anaconda.com/pkgs/main/win-64/libvorbis-1.3.7-he774522_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/libxml2-2.10.4-h0ad7f3c_2.conda
-https://repo.anaconda.com/pkgs/main/win-64/mkl-2023.1.0-h6b88ed4_46358.conda
-https://repo.anaconda.com/pkgs/main/win-64/pcre2-10.42-h0ff8eda_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/python-3.10.13-h966fe2a_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/zstd-1.5.5-hd43e919_2.conda
-https://repo.anaconda.com/pkgs/main/win-64/absl-py-2.1.0-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/async-timeout-4.0.3-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/attrs-23.1.0-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/blinker-1.6.2-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/cachetools-5.3.3-py310haa95532_0.conda
-https://conda.anaconda.org/conda-forge/noarch/certifi-2024.2.2-pyhd8ed1ab_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/charset-normalizer-2.0.4-pyhd3eb1b0_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/colorama-0.4.6-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/freetype-2.12.1-ha860e81_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/frozenlist-1.4.0-py310h2bbff1b_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/gast-0.4.0-pyhd3eb1b0_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/idna-3.7-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/libclang-14.0.6-default_hb5a9fac_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/libcurl-8.5.0-h86230a5_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/libglib-2.78.4-ha17d25a_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/libtiff-4.5.1-hd77b12b_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/libxslt-1.1.37-h2bbff1b_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/markdown-3.4.1-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/markupsafe-2.1.3-py310h2bbff1b_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/mkl-service-2.4.0-py310h2bbff1b_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/multidict-6.0.4-py310h2bbff1b_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/packaging-23.2-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/protobuf-3.20.3-py310hd77b12b_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/pyasn1-0.4.8-pyhd3eb1b0_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/pycparser-2.21-pyhd3eb1b0_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/pyjwt-2.4.0-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/python-flatbuffers-2.0-pyhd3eb1b0_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/setuptools-68.2.2-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/six-1.16.0-pyhd3eb1b0_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/tensorboard-data-server-0.6.1-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/tensorflow-estimator-2.10.0-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/termcolor-2.1.0-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/typing_extensions-4.9.0-py310haa95532_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/urllib3-2.1.0-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/wheel-0.43.0-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/wrapt-1.14.1-py310h2bbff1b_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/aiosignal-1.2.0-pyhd3eb1b0_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/astunparse-1.6.3-py_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/cffi-1.16.0-py310h2bbff1b_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/click-8.1.7-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/glib-tools-2.78.4-hd77b12b_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/google-pasta-0.2.0-pyhd3eb1b0_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/grpcio-1.42.0-py310hc60d5dd_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/libwebp-1.3.2-hbc33d0d_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/numpy-base-1.26.4-py310h65a83cf_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/pip-23.3.1-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/pyasn1-modules-0.2.8-py_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/requests-2.31.0-py310haa95532_1.conda
-https://repo.anaconda.com/pkgs/main/noarch/rsa-4.7.2-pyhd3eb1b0_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/tensorboard-plugin-wit-1.8.1-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/werkzeug-2.3.8-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/yarl-1.9.3-py310h2bbff1b_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/aiohttp-3.9.3-py310h2bbff1b_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/cryptography-41.0.3-py310h3438e0d_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/glib-2.78.4-hd77b12b_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/gstreamer-1.18.5-hd78058f_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/oauthlib-3.2.2-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/pyopenssl-23.2.0-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/google-auth-2.6.0-pyhd3eb1b0_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/gst-plugins-base-1.18.5-h9e645db_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/requests-oauthlib-1.3.0-py_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/google-auth-oauthlib-0.4.4-pyhd3eb1b0_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/qt-main-5.15.2-he8e5bd7_8.conda
-https://repo.anaconda.com/pkgs/main/win-64/qt-webengine-5.15.9-h5bd16bc_7.conda
-https://repo.anaconda.com/pkgs/main/win-64/qtwebkit-5.212-h2bbfb41_5.conda
-https://repo.anaconda.com/pkgs/main/noarch/opt_einsum-3.3.0-pyhd3eb1b0_1.conda
-https://repo.anaconda.com/pkgs/main/win-64/h5py-3.9.0-py310hfc34f40_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/keras-2.10.0-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/mkl_fft-1.3.8-py310h2bbff1b_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/mkl_random-1.2.4-py310h59b6b97_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/numpy-1.26.4-py310h055cbcc_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/opencv-4.6.0-py310ha36de5b_5.conda
-https://repo.anaconda.com/pkgs/main/win-64/scipy-1.13.0-py310h8640f81_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/tensorboard-2.10.0-py310haa95532_0.conda
-https://repo.anaconda.com/pkgs/main/noarch/keras-preprocessing-1.1.2-pyhd3eb1b0_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/tensorflow-base-2.10.0-mkl_py310h6a7f48e_0.conda
-https://repo.anaconda.com/pkgs/main/win-64/tensorflow-2.10.0-mkl_py310hd99672f_0.conda
+absl-py @ file:///C:/b/abs_14wchyjaia/croot/absl-py_1714140489450/work
+aiohttp @ file:///C:/b/abs_27h_1rpxgd/croot/aiohttp_1707342354614/work
+aiosignal @ file:///tmp/build/80754af9/aiosignal_1637843061372/work
+asgiref==3.8.1
+astunparse==1.6.3
+async-timeout @ file:///C:/b/abs_c8fgiuixkq/croot/async-timeout_1703097556097/work
+attrs @ file:///C:/b/abs_35n0jusce8/croot/attrs_1695717880170/work
+blinker @ file:///C:/b/abs_d9y2dm7cw2/croot/blinker_1696539752170/work
+cachetools @ file:///C:/b/abs_792zbtc0ua/croot/cachetools_1713977157919/work
+certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_1707022139797/work/certifi
+cffi @ file:///C:/b/abs_78eb1_vq6z/croot/cffi_1714483206096/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+click @ file:///C:/b/abs_f9ihnt72pu/croot/click_1698129847492/work
+colorama @ file:///C:/b/abs_a9ozq0l032/croot/colorama_1672387194846/work
+cryptography @ file:///C:/b/abs_f4do8t8jfs/croot/cryptography_1694444424531/work
+Django==5.0.4
+flatbuffers @ file:///home/ktietz/cip/python-flatbuffers_1634039120618/work
+frozenlist @ file:///C:/b/abs_d8e__s1ys3/croot/frozenlist_1698702612014/work
+gast @ file:///Users/ktietz/demo/mc3/conda-bld/gast_1628588903283/work
+google-auth @ file:///opt/conda/conda-bld/google-auth_1646735974934/work
+google-auth-oauthlib @ file:///tmp/build/80754af9/google-auth-oauthlib_1617120569401/work
+google-pasta @ file:///Users/ktietz/demo/mc3/conda-bld/google-pasta_1630577991354/work
+grpcio @ file:///C:/ci/grpcio_1655475084232/work
+h5py @ file:///C:/b/abs_17fav01gwy/croot/h5py_1691589733413/work
+idna @ file:///C:/b/abs_aad84bnnw5/croot/idna_1714398896795/work
+keras @ file:///C:/Users/builder/adipietro/mc3/tf210/conda-bld/keras_1669760570649/work/keras-2.10.0-py2.py3-none-any.whl
+Keras-Preprocessing @ file:///tmp/build/80754af9/keras-preprocessing_1612283640596/work
+Markdown @ file:///C:/b/abs_98lv_ucina/croot/markdown_1671541919225/work
+MarkupSafe @ file:///C:/b/abs_ecfdqh67b_/croot/markupsafe_1704206030535/work
+mkl-fft @ file:///C:/b/abs_19i1y8ykas/croot/mkl_fft_1695058226480/work
+mkl-random @ file:///C:/b/abs_edwkj1_o69/croot/mkl_random_1695059866750/work
+mkl-service==2.4.0
+multidict @ file:///C:/b/abs_44ido987fv/croot/multidict_1701097803486/work
+numpy @ file:///C:/b/abs_c1ywpu18ar/croot/numpy_and_numpy_base_1708638681471/work/dist/numpy-1.26.4-cp310-cp310-win_amd64.whl#sha256=ebb5aa2b36d8afa5ec3231c19e5a1fc75b6d85e7db483f0fb9e77dad58469977
+oauthlib @ file:///C:/b/abs_44riqpe5gg/croot/oauthlib_1679489644705/work
+opencv-python==4.9.0.80
+opt-einsum @ file:///tmp/build/80754af9/opt_einsum_1621500238896/work
+packaging @ file:///C:/b/abs_cc1h2xfosn/croot/packaging_1710807447479/work
+pillow==10.3.0
+protobuf==3.20.3
+pyasn1 @ file:///Users/ktietz/demo/mc3/conda-bld/pyasn1_1629708007385/work
+pyasn1-modules==0.2.8
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+PyJWT @ file:///C:/ci/pyjwt_1657529477795/work
+pyOpenSSL @ file:///C:/b/abs_08f38zyck4/croot/pyopenssl_1690225407403/work
+requests @ file:///C:/b/abs_474vaa3x9e/croot/requests_1707355619957/work
+requests-oauthlib==1.3.0
+rsa @ file:///tmp/build/80754af9/rsa_1614366226499/work
+scipy @ file:///C:/b/abs_2ea4kcjtpg/croot/scipy_1714080455387/work/dist/scipy-1.13.0-cp310-cp310-win_amd64.whl#sha256=064c6ae68c4daf977b4bb0cbbec2578ad43bd521f51fbfaee5915962aaa84877
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+sqlparse==0.5.0
+tensorboard @ file:///C:/Users/builder/adipietro/mc3/tf210/conda-bld/tensorboard_1669760968711/work/tensorboard-2.10.0-py3-none-any.whl
+tensorboard-data-server @ file:///C:/b/abs_2fhvpo862s/croot/tensorboard-data-server_1670853600144/work/tensorboard_data_server-0.6.1-py3-none-any.whl
+tensorboard-plugin-wit @ file:///C:/tf/b/tensorboard-plugin-wit_1660162132996/work/tensorboard_plugin_wit-1.8.1-py3-none-any.whl
+tensorflow==2.10.0
+tensorflow-estimator @ file:///C:/Users/builder/adipietro/mc3/tf210/conda-bld/tensorflow-estimator_1669761460695/work/tensorflow_estimator-2.10.0-py2.py3-none-any.whl
+termcolor @ file:///C:/b/abs_16qe7jhw7n/croot/termcolor_1668084642458/work
+typing_extensions @ file:///C:/b/abs_72cdotwc_6/croot/typing_extensions_1705599364138/work
+tzdata==2024.1
+urllib3 @ file:///C:/b/abs_a9n398cvep/croot/urllib3_1700840517182/work
+Werkzeug @ file:///C:/b/abs_3901hwqcw0/croot/werkzeug_1706210134718/work
+wrapt @ file:///C:/Windows/Temp/abs_7c3dd407-1390-477a-b542-fd15df6a24085_diwiza/croots/recipe/wrapt_1657814452175/work
+yarl @ file:///C:/b/abs_8bxwdyhjvp/croot/yarl_1701105248152/work

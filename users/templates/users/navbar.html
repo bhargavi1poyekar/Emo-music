@@ -4,6 +4,13 @@
         <li><a href="{% url 'users-songs' %}">MySongs</a></li>
         <li><a href="{% url 'users-playlists' %}">MyPlaylists</a></li>
         <li><a href="{% url 'user-profile' %}" style="font-variant: normal;">{{user.username}}</a></li>
-        <li><a href="{% url 'logout' %}" style="margin-left:900% ;float:right">LogOut</a></li>
+        {% if user.is_authenticated %}
+        <li>
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <a><button class="navbutton" type="submit">Logout</button></a>
+            </form>
+        </li>
+        {% endif %}
     </ul>
 </nav>

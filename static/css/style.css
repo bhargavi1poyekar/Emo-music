@@ -24,6 +24,10 @@ nav ul li {
   display: inline-flex;
   justify-content: center;
 }
+
+.navbutton{
+
+}
 .social {
   margin-top: 5%;
   text-align: center;
