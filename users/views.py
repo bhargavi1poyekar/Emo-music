@@ -7,6 +7,19 @@ from typing import Union
 
 
 # Create your views here.
+def is_user_authenticated(user) -> bool:
+    """
+    Checks if the user is authenticated.
+
+    Args:
+        user: A User instance for which the authentication status is checked.
+
+    Returns:
+        bool: True if the user is authenticated, otherwise False.
+    """
+    return user.is_authenticated
+
+
 def get_home(request: HttpRequest) -> Union[HttpResponse, redirect]:
     """
     View function to render the home page.
@@ -18,7 +31,7 @@ def get_home(request: HttpRequest) -> Union[HttpResponse, redirect]:
         Union[HttpResponse, redirect]: Renders the index page if user is authenticated,
         otherwise redirects to login.
     """
-    if request.user.is_authenticated:
+    if is_user_authenticated(request.user):
         return render(request, 'users/index.html')
     return redirect('login')
 
@@ -67,7 +80,7 @@ def delete_user(request: HttpRequest) -> HttpResponse:
     Returns:
         HttpResponse: Redirects to logout after deleting the user account.
     """
-    if request.user.is_authenticated:
+    if is_user_authenticated(request.user):
         user = User.objects.get(id=request.user.id)
         user.delete()
         return redirect('logout')
